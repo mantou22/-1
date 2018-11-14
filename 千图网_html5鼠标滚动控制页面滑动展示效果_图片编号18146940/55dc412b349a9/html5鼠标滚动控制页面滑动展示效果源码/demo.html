@@ -1,0 +1,602 @@
+<html>
+<head>
+	<title>div+css实现网页布局</title>
+
+<style>
+<!--
+	body{
+		margin:0px;
+		text-align:center;
+		background:#ffffcc;
+	}	
+
+	#container {
+		width:800px;
+		height:1000px;
+		margin:auto 0px;
+	}
+
+	#header {
+	         float:left; 
+	          width:800px;
+	          height: 100px;
+	        margin:auto 0px;
+	           background:red;
+	         clear:both;
+	       
+	}
+
+	#logo {
+		float:left;
+		width:250px;
+		height:90px;
+		background:green;
+		clear:right;
+		 margin:opx;
+	}
+
+	#banner{
+		float:right;
+		width:540px;
+		height:90px;
+		margin:0px;
+		clear:left;
+		background:blue;
+	}
+	
+	#menu {
+	   width:800px;
+	    height:35px;
+	    margin:auto 0px;
+	  clear: both;
+	
+	}
+	
+	#menu  ul {
+		float:left; 
+		list-style:none;
+		margin:0px;
+	}
+
+	#menu ul li {
+		float:left;
+		dispaly:block; 
+		line-height:35px;
+		margin:0 10px;
+	}
+
+	.menuDiv {
+		width:1px;
+		height:35px;
+		background:green;
+	}
+
+	#menu ul li a:link, #menu ul li a:visited {
+
+	font-weight:bold; color:blue;
+	}
+
+	#menu ul li a:hover {
+
+		font-width:800;
+		color:red; 
+	}
+
+	.nav {
+	margin:auto 0px;
+	 width:800px;
+	 height:10px;
+	  clear:both;
+	  background:#ffffff;
+ 	  line-height:10px;
+	}
+
+	.nav_a {
+	float:left;
+	margin:0px;
+	 width:610px;
+	  height:10px;
+	  clear:both;
+	  background:#ffffff;
+ 	  line-height:10px;
+	}
+	
+	.left_main {
+	  margin:0px;
+	  float:left;
+	  width:610px;
+	  height:420px;
+	  background:red;
+	
+
+	}
+
+	.right_main{
+		margin:0px;
+		float:right;
+		width:180px;
+		height:420px;
+		background:green;
+		clear:left;
+	}
+
+	.left_a {
+		margin:0px;
+		float:left;
+		width:300px;
+		height:205px;
+		background:blue;
+		
+
+	}
+	.left_b {
+		margin:0px;
+		float:right;
+		width:300px;
+		height:205px;
+		background:blue;
+		clear:left;
+	}
+	
+	.con {
+		margin:auto 0px;
+		 width:800px;
+		 height:200px;
+		background:green;
+		clear:both;	
+	
+	}
+	
+	.one {
+		float:left;
+		width:200px;
+		height:200px;
+		background:#ff99f0;
+		clear:right;
+	}
+
+	 .two{
+		float:left;
+		width:200px;
+		height:200px;
+		background:#ffcc00;
+	}
+
+	 .three {
+		float:left;
+		width:200px;
+		height:200px;
+		background:#0ffff0;
+	}
+
+	.four {
+		float:right;
+		width:190px;
+		height:200px;
+		background:#f0fff0;
+	}
+
+	#footer {
+		width:800px;
+		height:100px;
+		background:red;
+		margin:auto 0px;
+		padding-top: 30px;
+		color: #ffffff;
+	}
+  #footer a:link, #footer a:visited,{
+    text-decoration:none;
+    color: #ffffff;
+	}
+	#footer a:hover{
+    text-decoration:underline;
+    color: #ffffff;
+  }
+  
+	.tab1  h3{
+		float:left;
+		width:300px;
+		height:20px;
+		line-height:20px;
+		margin:0px;
+		font-size:13px;
+		text-align:left;
+		color:red;
+		background:green;
+		padding-left:10px;
+	}
+
+	.tab2{
+	         width:300px;
+	         height:180px;
+	       
+	        background:yellow; 
+	      
+	}
+
+	.tab2  ul {
+		margin: 4px 0 0;
+		list-style:none;
+		padding:0;
+	}
+	
+	.tab2 li
+	{
+		float:left;
+		width:50%;	
+	}
+
+	.tab2 li a {
+		display:block;
+		width:84%;
+		height:25px;
+		line-height:25px;
+		margin-left:8%;
+		font-size:12px;
+		text-decoration:none;
+		color:#333;
+
+	} 
+
+	#tab {
+		float:left;
+		margin:0px;
+		width:600px;
+		height:260px;
+		position:relative;
+		background:green;
+	}
+
+	#tab h3{
+		float:left;
+		width:120px;
+		height:26px;
+		
+		line-height:26px;
+		margin:0 -1px 0 0 ;
+		font-size:12px;
+		cursor:pointer;
+		text-align:center;
+		color:#ff00ff;
+		background:#aacc33;
+	}
+	
+	#tab div {
+		display:none;
+	}
+	
+	#tab .block {
+
+		display:block;
+	}
+
+	#tab .up {
+
+		background:blue;
+	}
+	#tab  div {
+	             float:left;
+	             top:26px;
+	             left:0px;
+	             width:600px;
+	             height:230px;
+	            border:solid #eee;
+	            border-width:0 1px 1px;
+	            background:#0f0f0f;
+	}
+
+	#tab ul{
+		float:left;
+		margin:15px 0 0;
+		list-style:decimal;
+		padding:0;
+		clear:right;
+	}
+	
+	#tab li {
+		float:left;
+		width:50%;
+		background:#123456;
+	}
+	#tab li a{
+		display:block;
+		width:90%;
+		 height:25px;
+		line-height:25px;
+		margin-left:8%;
+		font-size:12px;
+		text-decoration:none;
+		color:#ffffff;
+	}
+
+	#tab li a:hover {
+		text-decoration:underline;
+		color:red;
+
+	}
+	
+//-->	
+</style>
+</head>
+
+
+<body>
+<div  id="container" >
+	<div id="header">
+		<div id="logo">
+		</div>
+
+		<div id="banner">
+		</div>
+	</div>
+
+	<div id="menu">
+		<ul>
+		<li><a href="#">网站首页</a></li>
+		<li class="menuDiv"></li>
+		<li><a href="#">关于我们</a></li>
+		<li class="menuDiv"></li>
+		<li><a href="#">网站首页</a></li>
+		<li class="menuDiv"></li>
+		<li><a href="#">关于我们</a></li>
+		<li class="menuDiv"></li>
+		<li><a href="#">网站首页</a></li>
+		<li class="menuDiv"></li>
+		<li><a href="#">关于我们</a></li>
+		<li class="menuDiv"></li>
+		</ul>
+	</div>
+	<div class="nav">
+		nav
+	</div>
+	
+	<div class="left_main">
+		<div class="left_a">
+			<div class="tab1">
+				<h3>第一个栏目</h3>		
+			</div>
+
+			<div class="tab2">
+				<ul>
+			<li><a href="#">11111111111</a></li>
+			<li><a href="#">11111111111</a></li>
+			<li><a href="#">11111111111</a></li>
+			<li><a href="#">11111111111</a></li>
+			<li><a href="#">11111111111</a></li>
+			<li><a href="#">11111111111</a></li>
+			<li><a href="#">11111111111</a></li>
+			<li><a href="#">11111111111</a></li>
+			<li><a href="#">11111111111</a></li>
+			<li><a href="#">11111111111</a></li>
+			<li><a href="#">11111111111</a></li>
+			<li><a href="#">11111111111</a></li>
+	
+				</ul>
+			</div>
+
+		</div>
+		<div class="left_b">
+			<div class="tab1">
+				<h3>第一个栏目</h3>		
+			</div>
+
+			<div class="tab2">
+				<ul>
+			<li><a href="#">11111111111</a></li>
+			<li><a href="#">11111111111</a></li>
+			<li><a href="#">11111111111</a></li>
+			<li><a href="#">11111111111</a></li>
+			<li><a href="#">11111111111</a></li>
+			<li><a href="#">11111111111</a></li>
+			<li><a href="#">11111111111</a></li>
+			<li><a href="#">11111111111</a></li>
+			<li><a href="#">11111111111</a></li>
+			<li><a href="#">11111111111</a></li>
+			<li><a href="#">11111111111</a></li>
+			<li><a href="#">11111111111</a></li>
+	
+				</ul>
+			</div>
+
+		</div>
+
+		<div class="nav_a">nav_left</div>
+
+		<div class="left_a">
+			<div class="tab1">
+				<h3>第一个栏目</h3>		
+			</div>
+
+			<div class="tab2">
+				<ul>
+			<li><a href="#">11111111111</a></li>
+			<li><a href="#">11111111111</a></li>
+			<li><a href="#">11111111111</a></li>
+			<li><a href="#">11111111111</a></li>
+			<li><a href="#">11111111111</a></li>
+			<li><a href="#">11111111111</a></li>
+			<li><a href="#">11111111111</a></li>
+			<li><a href="#">11111111111</a></li>
+			<li><a href="#">11111111111</a></li>
+			<li><a href="#">11111111111</a></li>
+			<li><a href="#">11111111111</a></li>
+			<li><a href="#">11111111111</a></li>
+	
+				</ul>
+			</div>
+
+		</div>
+		<div class="left_b">
+			<div class="tab1">
+				<h3>第一个栏目</h3>		
+			</div>
+
+			<div class="tab2">
+				<ul>
+			<li><a href="#">11111111111</a></li>
+			<li><a href="#">11111111111</a></li>
+			<li><a href="#">11111111111</a></li>
+			<li><a href="#">11111111111</a></li>
+			<li><a href="#">11111111111</a></li>
+			<li><a href="#">11111111111</a></li>
+			<li><a href="#">11111111111</a></li>
+			<li><a href="#">11111111111</a></li>
+			<li><a href="#">11111111111</a></li>
+			<li><a href="#">11111111111</a></li>
+			<li><a href="#">11111111111</a></li>
+			<li><a href="#">11111111111</a></li>
+	
+				</ul>
+			</div>
+
+		</div>
+	</div>
+	<div class="right_main">
+
+	</div>	
+	<div class="nav">nav</div>
+	<div class="con">
+		<div class="one"></div>
+
+		<div class="two"> </div>
+
+		<div class="three"> </div>
+	
+		<div class="four"> </div>
+
+	</div>
+
+<div class="left_main">
+		<div class="left_a"></div>
+		<div class="left_b"></div>
+
+		<div class="nav_a">nav_left</div>
+
+		<div id="tab">
+			<h3  onclick="go_to(1)">选择一</h3>	
+			<h3 onClick="go_to(2)">选择二</h3>	
+			<h3 onClick="go_to(3)">选择三</h3>	
+			<h3 onClick="go_to(4)">选择四</h3>	
+			<h3 onClick="go_to(5)">选择五</h3>	
+			
+
+			<div class="block"> 
+				<ul>
+			<li><a href="#">11111111111</a></li>
+			<li><a href="#">11111111111</a></li>
+			<li><a href="#">11111111111</a></li>
+			<li><a href="#">11111111111</a></li>
+			<li><a href="#">11111111111</a></li>
+			<li><a href="#">11111111111</a></li>
+			<li><a href="#">11111111111</a></li>
+			<li><a href="#">11111111111</a></li>
+			<li><a href="#">11111111111</a></li>
+			<li><a href="#">11111111111</a></li>
+			<li><a href="#">11111111111</a></li>
+			<li><a href="#">11111111111</a></li>
+			<li><a href="#">11111111111</a></li>
+			<li><a href="#">11111111111</a></li>
+				</ul>
+			</div>
+			
+			<div> 
+				<ul>
+			<li><a href="#">222222222222</a></li>
+			<li><a href="#">22222222222</a></li>
+			<li><a href="#">222222222222</a></li>
+			<li><a href="#">22222222222</a></li>
+			<li><a href="#">222222222222</a></li>
+			<li><a href="#">22222222222</a></li>
+			<li><a href="#">222222222222</a></li>
+			<li><a href="#">22222222222</a></li>
+			<li><a href="#">222222222222</a></li>
+			<li><a href="#">22222222222</a></li>
+		
+
+				</ul>
+			</div>
+
+			
+			<div> 
+				<ul>
+			<li><a href="#">3333333333</a></li>
+			<li><a href="#">3333333333</a></li>
+			<li><a href="#">3333333333</a></li>
+			<li><a href="#">3333333333</a></li>
+			<li><a href="#">3333333333</a></li>
+			<li><a href="#">3333333333</a></li>
+			<li><a href="#">3333333333</a></li>
+			<li><a href="#">3333333333</a></li>
+			<li><a href="#">3333333333</a></li>
+			<li><a href="#">3333333333</a></li>
+			<li><a href="#">3333333333</a></li>
+			<li><a href="#">3333333333</a></li>
+			<li><a href="#">3333333333</a></li>
+			<li><a href="#">3333333333</a></li>
+
+				</ul>
+			</div>
+			
+			<div> 
+				<ul>
+			<li><a href="#">444444444444</a></li>
+			<li><a href="#">4444444444</a></li>
+			<li><a href="#">444444444444</a></li>
+			<li><a href="#">4444444444</a></li>
+			<li><a href="#">444444444444</a></li>
+			<li><a href="#">4444444444</a></li>
+			<li><a href="#">444444444444</a></li>
+		
+				</ul>
+			</div>
+			
+			<div> 
+				<ul>
+			<li><a href="#">555555555</a></li>
+			<li><a href="#">555555555</a></li>
+			<li><a href="#">555555555</a></li>
+			<li><a href="#">555555555</a></li>
+			<li><a href="#">555555555</a></li>
+			<li><a href="#">555555555</a></li>
+		
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="right_main">
+
+	</div>	
+	<div class="nav">nav
+	</div>
+
+	<div id="footer">
+	Powered by <a href="http://www.coodu.cn">Fandt</a>
+  </div>
+</div>
+
+<script>
+<!--
+	var h=document.getElementById("tab").getElementsByTagName("h3");
+	var  d=document.getElementById("tab").getElementsByTagName("div");
+
+	function go_to(ao)
+	{
+		for(var i=0; i<h.length; i++)
+		{
+			if(ao-1==i)
+			{
+				d[i].className+=" block";
+				h[i].className+=" up";
+			}else
+			{
+				h[i].className=" ";
+				d[i].className=" ";
+			}
+		}
+	}
+		
+//-->
+</script>
+</body>
+
+</html>
